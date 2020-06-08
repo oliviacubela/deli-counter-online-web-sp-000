@@ -13,9 +13,17 @@ def line(katz_deli)
     puts "The line is currently: #{line_positions.join(" ")}"
   end
 end
-#build the line method that shows everyone their current place in the line. If there is nobody in line, it should say "The line is currently empty."
 
+def take_a_number(katz_deli, name)
+  katz_deli << name
+  puts "Welcome, #{name}. You are number #{katz_deli.size} in line."
+end
 
-#def now_serving
-
-#end
+def now_serving(katz_deli)
+  if katz_deli.empty?
+    puts "There is nobody waiting to be served!"
+  else
+    puts "Currently serving #{katz_deli.first}."
+    katz_deli.shift
+  end
+end
