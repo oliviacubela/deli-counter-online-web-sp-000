@@ -1,13 +1,18 @@
+katz_deli = [ ]
+
 def line(katz_deli)
-  katz_deli = [ ]
-  if katz_deli != 0
+  line_positions = [];
+  if katz_deli.empty?
     puts "The line is currently empty."
   else
-    puts "Welcome to Katz Deli!"
+    number = 1
+    katz_deli.each do |customer|
+      line_positions << "#{number}. #{customer}"
+      number += 1
+    end
+    puts "The line is currently: #{line_positions.join(" ")}"
   end
 end
-
-
 #build the line method that shows everyone their current place in the line. If there is nobody in line, it should say "The line is currently empty."
 
 
